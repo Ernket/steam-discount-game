@@ -1,11 +1,12 @@
 # -*- coding: UTF-8 -*-
 import requests
 import bs4
+import urllib
 
 pageid = 1
 
 file = open("steam.txt","a")
-while pageid<3:
+while pageid<10:
     url = "https://store.steampowered.com/search/?specials=1&page=" + str(pageid)
     res = requests.get(url)
     soup = bs4.BeautifulSoup(res.text)
@@ -18,5 +19,8 @@ while pageid<3:
             file.write(name+"\n")
             file.close
         except:
-            print("游戏名读取或者写入文件时出错")
+            print(name.encode('utf-8'))
+            urlname = name.encode('utf-8')
+            file.write(str(urlname)+"\n")
+            file.close
     pageid = pageid + 1
