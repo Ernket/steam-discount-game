@@ -21,6 +21,13 @@ while pageid<10:
         except:
             print(name.encode('utf-8'))
             urlname = name.encode('utf-8')
-            file.write(str(urlname)+"\n")
+            newname1 = str(urlname).replace('xe2','')
+            newname2 = str(newname1).replace('x84','')
+            newname3 = str(newname2).replace('xa2','')
+            newname4 = str(newname3).replace('xc2','')
+            newname5 = str(newname4).replace('xe2','')
+            newname6 = str(newname5).replace('xae','')
+            newname7 = str(newname6).replace('\\','')
+            file.write(str(newname7)+"\n")
             file.close
     pageid = pageid + 1
