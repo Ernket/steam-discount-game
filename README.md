@@ -5,3 +5,6 @@
 其中需要模块
 - BeautifulSoup来解析html (pip install BeautifulSoup)
 - requests 来请求url (pip install requests)
+
+# 小更新
+之前的爬虫爬下来的内容有url编码，所以这里添加了规则，把东西都替换掉了
